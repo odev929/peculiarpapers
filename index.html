@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeculiarPapers.com</title>
+
+    <!-- Bootstrap 4 CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .logo {
+            font-weight: bold;
+        }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand logo" href="#">
+            PeculiarPapers.com
+        </a>
+    </nav>
+
+    <div class="container mt-5">
+        <!-- Intro Section -->
+        <div class="intro-section mb-5">
+            <img src="path_to_image.jpg" alt="Intro Image" class="img-fluid mb-3">
+            <p>Short introduction about the paper...</p>
+        </div>
+
+        <!-- PDF Viewer Section -->
+<div id="adobe-dc-view"></div>
+<script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+<script type="text/javascript">
+	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+		var adobeDCView = new AdobeDC.View({clientId: "6c299b49572c42c6866c9d3ba61fb0f7", divId: "adobe-dc-view"});
+		adobeDCView.previewFile({
+			content:{location: {url: "https://peculiarpapers.com/interesting/2BeOrNot.pdf"}},
+			metaData:{fileName: "2BeOrNot.pdf"}
+		}, {defaultViewMode: "FIT_PAGE", showAnnotationTools: false, showDownloadPDF: false, 
+			showPrintPDF: false});
+	});
+</script>
+
+        <!-- Footer Section -->
+        <div class="footer-section">
+            <h5>Other Posts:</h5>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-footer">
+                        <a href="#">Post Link 1</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-footer">
+                        <a href="#">Post Link 2</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-footer">
+                        <a href="#">Post Link 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 4 JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://peculiarpapers.com/footerPosts.js"></script>
+</body>
+</html>

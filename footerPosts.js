@@ -1,12 +1,12 @@
 const posts = [
-    {name:'1984_breakfast', brief:'aaa'},
-    {name:'2BeOrNot',brief:'sss'},
-    {name:'AntibacterialCrocodileTears',brief:'ddd'},
-    {name:'CherryTreeChopping',brief:'fff'},
-    {name:'CinderellasGlassSlipperIndustry',brief:'ggg'},
-    {name:'MobyDick',brief:'hhh'},
-    {name:'SnowWhite',brief:'jjj'},
-    {name:'gotham_bats',brief:'kkkk'},
+    {name:'1984_breakfast', brief:'Orwellian 1984 Breakfast'},
+    {name:'2BeOrNot',brief:'2 Be Or Not'},
+    {name:'AntibacterialCrocodileTears',brief:'Capt'n Hooks Antibacterial Crocodile Tears'},
+    {name:'CherryTreeChopping',brief:'Washingtons Cherry Tree Chopping'},
+    {name:'CinderellasGlassSlipperIndustry',brief:'Cinderellas Glass Slipper Industry'},
+    {name:'MobyDick',brief:'Moby Dick'},
+    {name:'SnowWhite',brief:'Snow White Saves the Forest'},
+    {name:'gotham_bats',brief:'Gotham City Bat Crime'},
 ];
 
 function renderFooterPosts() {
@@ -24,7 +24,7 @@ console.log('renderingFooterPosts')
         cardFooter.className = 'card-footer';
 
         const postLink = document.createElement('a');
-        postLink.href = '/interesting/'+post.name+'.pdf';
+        postLink.href = '//peculiarpapers.com/index.html?pdf='+post.name+'&fromfooter';
         postLink.innerText = post.brief;
 
         cardFooter.appendChild(postLink);

@@ -1,7 +1,7 @@
 const posts = [
     {name:'1984_breakfast', brief:'Orwellian 1984 Breakfast'},
     {name:'2BeOrNot',brief:'2 Be Or Not'},
-    {name:'AntibacterialCrocodileTears',brief:'Capt'n Hooks Antibacterial Crocodile Tears'},
+    {name:'AntibacterialCrocodileTears',brief:'Cap\'n Hooks Antibacterial Crocodile Tears'},
     {name:'CherryTreeChopping',brief:'Washingtons Cherry Tree Chopping'},
     {name:'CinderellasGlassSlipperIndustry',brief:'Cinderellas Glass Slipper Industry'},
     {name:'MobyDick',brief:'Moby Dick'},

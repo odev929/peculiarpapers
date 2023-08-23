@@ -1,7 +1,12 @@
 const posts = [
-    { link: 'post1.html', title: 'Post Link 1' },
-    { link: 'post2.html', title: 'Post Link 2' },
-    { link: 'post3.html', title: 'Post Link 3' }
+    {name:'1984_breakfast', brief:'aaa'},
+    {name:'2BeOrNot',brief:'sss'},
+    {name:'AntibacterialCrocodileTears',brief:'ddd'},
+    {name:'CherryTreeChopping',brief:'fff'},
+    {name:'CinderellasGlassSlipperIndustry',brief:'ggg'},
+    {name:'MobyDick',brief:'hhh'},
+    {name:'SnowWhite',brief:'jjj'},
+    {name:'gotham_bats',brief:'kkkk'},
 ];
 
 function renderFooterPosts() {
@@ -18,8 +23,8 @@ function renderFooterPosts() {
         cardFooter.className = 'card-footer';
 
         const postLink = document.createElement('a');
-        postLink.href = post.link;
-        postLink.innerText = post.title;
+        postLink.href = '/interesting/'+post.name+'.pdf';
+        postLink.innerText = post.brief;
 
         cardFooter.appendChild(postLink);
         card.appendChild(cardFooter);

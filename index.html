@@ -41,15 +41,25 @@
         <!-- PDF Viewer Section -->
 <div id="adobe-dc-view"></div>
 <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+
 <script type="text/javascript">
-	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-		var adobeDCView = new AdobeDC.View({clientId: "6c299b49572c42c6866c9d3ba61fb0f7", divId: "adobe-dc-view"});
-		adobeDCView.previewFile({
-			content:{location: {url: "/interesting/2BeOrNot.pdf"}},
-			metaData:{fileName: "2BeOrNot.pdf"}
-		}, {defaultViewMode: "FIT_PAGE", showAnnotationTools: false, showDownloadPDF: false, 
-			showPrintPDF: false});
-	});
+    // Function to get URL parameters
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+        // Get the 'pdf' parameter from the URL, if not provided, fallback to '2BeOrNot'
+        var pdfName = getQueryParam('pdf') || '2BeOrNot';
+
+        var adobeDCView = new AdobeDC.View({clientId: "6c299b49572c42c6866c9d3ba61fb0f7", divId: "adobe-dc-view"});
+        adobeDCView.previewFile({
+            content:{location: {url: `/interesting/${pdfName}.pdf`}},
+            metaData:{fileName: `${pdfName}.pdf`}
+        }, {defaultViewMode: "FIT_PAGE", showAnnotationTools: false, showDownloadPDF: false, 
+            showPrintPDF: false});
+    });
 </script>
 
         <!-- Footer Section -->

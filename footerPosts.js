@@ -11,11 +11,12 @@ const posts = [
 
 function renderFooterPosts() {
     const footerContainer = document.querySelector('.card-deck');
-
+console.log('renderingFooterPosts')
     // Clear any existing content
     footerContainer.innerHTML = '';
 
     posts.forEach(post => {
+        console.log('eachpost',post)
         const card = document.createElement('div');
         card.className = 'card';
 

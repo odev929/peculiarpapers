@@ -45,7 +45,7 @@
 	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
 		var adobeDCView = new AdobeDC.View({clientId: "6c299b49572c42c6866c9d3ba61fb0f7", divId: "adobe-dc-view"});
 		adobeDCView.previewFile({
-			content:{location: {url: "https://peculiarpapers.com/interesting/2BeOrNot.pdf"}},
+			content:{location: {url: "/interesting/2BeOrNot.pdf"}},
 			metaData:{fileName: "2BeOrNot.pdf"}
 		}, {defaultViewMode: "FIT_PAGE", showAnnotationTools: false, showDownloadPDF: false, 
 			showPrintPDF: false});

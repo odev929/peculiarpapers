@@ -136,6 +136,31 @@ table {
     {name:'gotham_bats',brief:'Gotham City Bat Crime'},
 ];
 
+function renderFooterPosts() {
+    const footerContainer = document.querySelector('.card-deck');
+console.log('renderingFooterPosts')
+    // Clear any existing content
+    footerContainer.innerHTML = '';
+
+    posts.forEach(post => {
+        console.log('eachpost',post)
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const cardFooter = document.createElement('div');
+        cardFooter.className = 'card-footer';
+
+        const postLink = document.createElement('a');
+        postLink.href = '//peculiarpapers.com/index.html?pdf='+post.name+'&fromfooter';
+        postLink.innerText = post.brief;
+
+        cardFooter.appendChild(postLink);
+        card.appendChild(cardFooter);
+        footerContainer.appendChild(card);
+    });
+}
+
+
                 // Populate random cards on page load
                 document.addEventListener("DOMContentLoaded", function() {
                     const cardDeck = document.getElementById("randomCardDeck");

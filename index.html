@@ -117,48 +117,42 @@ table {
         <!-- Footer Section -->
         <div class="footer-section">
             <h5>Other Posts:</h5>
-            <div class="card-deck">
-                <div class="card">
-                    <div class="card-footer">
-                        <a href="#">Post Link 1</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-footer">
-                        <a href="#">Post Link 2</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-footer">
-                        <a href="#">Post Link 3</a>
-                    </div>
-                </div>
+            <div class="card-deck" id="randomCardDeck"> <!-- Added id attribute -->
+                <!-- Cards will be dynamically generated here -->
             </div>
             <script src="path_to_footerPosts.js"></script>
             <script>
-            // Randomly shuffle card data and select 3 cards
+                // Randomly shuffle card data and select 3 cards
                 function getRandomCards(cardArray, numCards) {
-                const shuffledArray = cardArray.slice().sort(() => Math.random() - 0.5);
-                return shuffledArray.slice(0, numCards);
+                    const shuffledArray = cardArray.slice().sort(() => Math.random() - 0.5);
+                    return shuffledArray.slice(0, numCards);
                 }
 
-            // Populate random cards on page load
-                document.addEventListener("DOMContentLoaded", function() {
-                const cardDeck = document.getElementById("randomCardDeck");
-                const randomCards = getRandomCards(posts, 3);
+                // Card data (replace with your actual data)
+                const posts = [
+                    { name: "post1", brief: "Brief description of Post 1" },
+                    { name: "post2", brief: "Brief description of Post 2" },
+                    { name: "post3", brief: "Brief description of Post 3" },
+                    // Add more posts as needed
+                ];
 
-                randomCards.forEach(card => {
-                const cardElement = document.createElement("div");
-                cardElement.className = "card";
-                cardElement.innerHTML = `
-                    <div class="card-footer">
-                        <a href="/interesting/${card.name}.pdf">${card.brief}</a>
-                    </div>
-                `;
-                cardDeck.appendChild(cardElement);
-               });
+                // Populate random cards on page load
+                document.addEventListener("DOMContentLoaded", function() {
+                    const cardDeck = document.getElementById("randomCardDeck");
+                    const randomCards = getRandomCards(posts, 3);
+
+                    randomCards.forEach(card => {
+                        const cardElement = document.createElement("div");
+                        cardElement.className = "card";
+                        cardElement.innerHTML = `
+                            <div class="card-footer">
+                                <a href="/interesting/${card.name}.pdf">${card.brief}</a>
+                            </div>
+                        `;
+                        cardDeck.appendChild(cardElement);
+                    });
                 });
-</script>
+            </script>
         </div>
     </div>
 

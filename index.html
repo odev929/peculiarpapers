@@ -136,44 +136,6 @@ table {
     {name:'gotham_bats',brief:'Gotham City Bat Crime'},
 ];
 
-function renderFooterPosts() {
-    const footerContainer = document.querySelector('.card-deck');
-console.log('renderingFooterPosts')
-    // Clear any existing content
-    footerContainer.innerHTML = '';
-
-    posts.forEach(post => {
-        console.log('eachpost',post)
-        const card = document.createElement('div');
-        card.className = 'card';
-
-        const cardFooter = document.createElement('div');
-        cardFooter.className = 'card-footer';
-
-        const postLink = document.createElement('a');
-        postLink.href = '//peculiarpapers.com/index.html?pdf='+post.name+'&fromfooter';
-        postLink.innerText = post.brief;
-
-        cardFooter.appendChild(postLink);
-        card.appendChild(cardFooter);
-        footerContainer.appendChild(card);
-    });
-}
-
-// document.addEventListener('DOMContentLoaded', renderFooterPosts);
-
-            </script>
-            <!-- <script src="footerPosts.js"></script> -->
-            <script>
-               
-                // Card data (replace with your actual data)
-                // const posts = [
-                //     { name: "post1", brief: "Brief description of Post 1" },
-                //     { name: "post2", brief: "Brief description of Post 2" },
-                //     { name: "post3", brief: "Brief description of Post 3" },
-                //     // Add more posts as needed
-                // ];
-
                 // Populate random cards on page load
                 document.addEventListener("DOMContentLoaded", function() {
                     const cardDeck = document.getElementById("randomCardDeck");

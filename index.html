@@ -134,6 +134,31 @@ table {
                     </div>
                 </div>
             </div>
+            <script src="path_to_footerPosts.js"></script>
+            <script>
+            // Randomly shuffle card data and select 3 cards
+                function getRandomCards(cardArray, numCards) {
+                const shuffledArray = cardArray.slice().sort(() => Math.random() - 0.5);
+                return shuffledArray.slice(0, numCards);
+                }
+
+            // Populate random cards on page load
+                document.addEventListener("DOMContentLoaded", function() {
+                const cardDeck = document.getElementById("randomCardDeck");
+                const randomCards = getRandomCards(posts, 3);
+
+                randomCards.forEach(card => {
+                const cardElement = document.createElement("div");
+                cardElement.className = "card";
+                cardElement.innerHTML = `
+                    <div class="card-footer">
+                        <a href="/interesting/${card.name}.pdf">${card.brief}</a>
+                    </div>
+                `;
+                cardDeck.appendChild(cardElement);
+               });
+                });
+</script>
         </div>
     </div>
 

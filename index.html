@@ -176,20 +176,23 @@ console.log('renderingFooterPosts')
 
                 // Populate random cards on page load
                 document.addEventListener("DOMContentLoaded", function() {
-    const cardDeck = document.getElementById("randomCardDeck");
-    const randomCards = getRandomCards(posts, 3);
+                const cardDeck = document.getElementById("randomCardDeck");
+                const randomCards = getRandomCards(posts, 3);
 
-    randomCards.forEach(card => {
-        const cardElement = document.createElement("div");
-        cardElement.className = "card";
-        cardElement.innerHTML = `
-            <div class="card-footer">
-                <a href='//peculiarpapers.com/index.html?pdf=` + card.name + `&fromfooter'>` + card.brief + `</a>
-            </div>
-        `;
-        cardDeck.appendChild(cardElement);
-    });
-});
+                randomCards.forEach(card => {
+             const cardElement = document.createElement("div");
+             cardElement.className = "card";
+             cardElement.innerHTML = `
+                 <div class="card-footer">
+                 <a href='//peculiarpapers.com/index.html?pdf=` + card.name + `&fromfooter'>` + card.brief + `</a>
+                /div>
+             `;
+            cardDeck.appendChild(cardElement);
+                 });
+            });
+
+            <a href="list.html" class="btn btn-primary mt-3">Full List</a>
+
             </script>
         </div>
     </div>

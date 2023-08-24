@@ -20,14 +20,22 @@
 
     <div class="container mt-5">
         <h2>List of Posts</h2>
+        <div class="input-group mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search by Post Name">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
+            </div>
+        </div>
         <ul class="list-group" id="postList">
             <!-- Posts will be dynamically generated here -->
         </ul>
         <script src="footerPosts.js"></script>
         <script>
-            function renderPosts() {
+            function renderPosts(postsArray) {
                 const postList = document.getElementById("postList");
-                posts.forEach(post => {
+                postList.innerHTML = ""; // Clear previous results
+
+                postsArray.forEach(post => {
                     const listItem = document.createElement("li");
                     listItem.className = "list-group-item";
                     listItem.innerHTML = `<a href="//peculiarpapers.com/index.html?pdf=${post.name}&fromlist">${post.brief}</a>`;
@@ -35,8 +43,32 @@
                 });
             }
 
-            // Load posts when the DOM is ready
-            document.addEventListener("DOMContentLoaded", renderPosts);
+            function searchPosts(searchTerm) {
+                const filteredPosts = posts.filter(post =>
+                    post.name.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+                renderPosts(filteredPosts);
+            }
+
+            // Load all posts when the DOM is ready
+            document.addEventListener("DOMContentLoaded", () => {
+                renderPosts(posts);
+
+                const searchButton = document.getElementById("searchButton");
+                const searchInput = document.getElementById("searchInput");
+
+                searchButton.addEventListener("click", () => {
+                    const searchTerm = searchInput.value.trim();
+                    searchPosts(searchTerm);
+                });
+
+                searchInput.addEventListener("keyup", event => {
+                    if (event.key === "Enter") {
+                        const searchTerm = searchInput.value.trim();
+                        searchPosts(searchTerm);
+                    }
+                });
+            });
         </script>
     </div>
 

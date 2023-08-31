@@ -8,7 +8,7 @@ const posts = [
     {name:'SnowWhite',brief:'Snow White Saves the Forest'},
     {name:'gotham_bats',brief:'Gotham City Bat Crime'},
 ];
-
+// this is nothing
 function renderFooterPosts() {
     const footerContainer = document.querySelector('.card-deck');
 console.log('renderingFooterPosts')

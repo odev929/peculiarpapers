@@ -1,3 +1,8 @@
+/* Reset CSS */
+/* ... (same as in your original code) ... */
+
+/* Custom CSS */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f9f9f9;
@@ -95,7 +100,12 @@ body {
 
 .btn-primary:hover {
     background-color: #0056b3;
-}
+/* Reset CSS */
+/* ... (same as in your original code) ... */
+
+/* Custom CSS */}
+
+
 
 /* Additional CSS for PDF viewer */
 #adobe-dc-view {
